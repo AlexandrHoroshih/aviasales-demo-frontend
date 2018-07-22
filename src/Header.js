@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo from "./media/logo.png";
 import reverse from "./media/arrow.svg";
 import calendar from "./media/calendar.svg";
+import aero from "./media/aero.svg";
 
 const Background = styled.header`
   background: linear-gradient(
@@ -14,7 +15,6 @@ const Background = styled.header`
     #02abdb -14.46%,
     #196ebd 73.68%
   );
-  height: 500px;
 `;
 
 const Logo = styled.img`
@@ -46,6 +46,8 @@ const Tagline = styled.h2`
 const SearchForm = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 122px;
 `;
 
 const FlightInputs = styled.div`
@@ -164,6 +166,33 @@ const FakeInput = DepartureInput.extend`
   border-bottom-right-radius: 4px;
 `;
 
+const SearchButton = styled.button`
+  display: flex;
+  align-self: center;
+  margin-top: 32px;
+  border: none;
+  background: #ff9241;
+  border-radius: 4px;
+
+  padding-top: 15px;
+  padding-left: 45px;
+  padding-bottom: 16px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 28px;
+
+  color: #ffffff;
+`;
+
+const Plane = styled.img`
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 7px;
+`;
+
 export default function() {
   return (
     <Background>
@@ -172,7 +201,7 @@ export default function() {
         <Title>Поиск дешевых авиабилетов</Title>
         <Tagline>Лучший способ купить авиабилеты дешёво</Tagline>
         <div className="row center-xs">
-          <div className="col-xs-10">
+          <div className="col-xs-12 col-md-10">
             <SearchForm>
               <FlightInputs>
                 <Departure>
@@ -206,6 +235,9 @@ export default function() {
                   <FakeInput placeholder="1 пассажир" />
                 </PassengerInfo>
               </DetailsInputs>
+              <SearchButton>
+                Найти билеты<Plane src={aero} alt="Search" />
+              </SearchButton>
             </SearchForm>
           </div>
         </div>
