@@ -3,6 +3,7 @@ import Header from "./Header";
 import Destinations from "./Destinations";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import BestPrices from "./BestPrices";
 
 const Main = () => (
   <div>
@@ -11,6 +12,7 @@ const Main = () => (
     </Helmet>
     <Header />
     <Destinations />
+    <BestPrices />
   </div>
 );
 
