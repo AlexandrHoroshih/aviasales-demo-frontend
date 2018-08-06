@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "./media/logo.png";
-import reverse from "./media/arrow.svg";
-import calendar from "./media/calendar.svg";
-import aero from "./media/aero.svg";
+import { Link } from "react-router-dom";
+import logo from "./logo.png";
+import reverse from "./arrow.svg";
+import calendar from "./calendar.svg";
+import aero from "./aero.svg";
 
 const Background = styled.header`
   background: linear-gradient(
@@ -314,6 +315,11 @@ const SearchButton = styled.button`
   }
 `;
 
+const SearchLink = styled(Link)`
+  color: #ffffff;
+  text-decoration: none;
+`;
+
 const Plane = styled.img`
   margin-left: 24px;
   margin-right: 24px;
@@ -376,7 +382,9 @@ export default function() {
                 </DetailsInputs>
               </Inputs>
               <SearchButton>
-                Найти билеты<Plane src={aero} alt="Search" />
+                <SearchLink to="/Search">
+                  Найти билеты<Plane src={aero} alt="Search" />
+                </SearchLink>
               </SearchButton>
             </SearchForm>
           </div>

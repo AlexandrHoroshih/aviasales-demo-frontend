@@ -85,6 +85,12 @@ const Destination = styled.div`
   justify-content: flex-start;
 `;
 
+const FlagWrapper = styled.span`
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
 class Card extends Component {
   render() {
     return (
@@ -92,7 +98,9 @@ class Card extends Component {
         <CityImg src={this.props.img} />
         <Info>
           <Destination>
-            <Flag country={this.props.country} />
+            <FlagWrapper>
+              <Flag country={this.props.country} />
+            </FlagWrapper>
             <div>
               <City>{this.props.city}</City>
               <Country>{this.props.country}</Country>

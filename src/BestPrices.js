@@ -92,15 +92,11 @@ const Country = styled.h2`
   color: #a0b0b9;
 `;
 
-const FlagPrice = styled(Flag)`
-  @media (max-width: 767px) {
-    display: flex;
-  }
-`;
-
 const DepartureList = styled.ul`
   @media (max-width: 768px) {
     flex-basis: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   list-style-type: none;
   padding: 0;
@@ -118,21 +114,39 @@ const DepartureItem = styled.li`
   }
 `;
 
-const Wrapper = styled.div`
+const ListWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  flex-basis: 100%;
+`;
+
+const Prices = styled.div`
+  flex-basis: 25%;
   @media (max-width: 768px) {
     flex-basis: 100%;
+    margin-bottom: 24px;
   }
 `;
 
 const Subtitle = styled.div`
   margin-top: 80px;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
+  margin-bottom: 80px;
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   line-height: 26px;
   font-size: 16px;
   text-align: center;
-
   color: #4a4a4a;
 
   & span {
@@ -144,7 +158,7 @@ const Subtitle = styled.div`
   }
 `;
 
-class Departure extends Component {
+class Departures extends Component {
   render() {
     return (
       <DepartureList>
@@ -165,24 +179,24 @@ export default function() {
         <div className="col-xs-12 col-md-10">
           <Logo src={best} />
           <Title>Лучшие цены на авиабилеты за последний месяц</Title>
-          <div className="row between-md">
+          <ListWrapper>
             {prices.map((price, index) => (
-              <Wrapper>
+              <Prices>
                 <Destination>
-                  <FlagPrice country={price.country} />
+                  <Flag country={price.country} />
                   <div>
                     <City>{price.city}</City>
                     <Country>{price.country}</Country>
                   </div>
                 </Destination>
-                <Departure departure={price.depart} />
-              </Wrapper>
+                <Departures departure={price.depart} />
+              </Prices>
             ))}
-          </div>
+          </ListWrapper>
           <Subtitle>
             Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220
-            стран мира. Поиск и сравнение цен на авиабилеты среди 100 агентств и
-            728 авиакомпаний.<br />
+            стран мира.<br /> Поиск и сравнение цен на авиабилеты среди 100
+            агентств и 728 авиакомпаний.<br />
             <span>
               Цены, найденные пользователями за последние 48 часов, не являются
               офертой.

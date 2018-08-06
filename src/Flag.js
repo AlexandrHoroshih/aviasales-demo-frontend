@@ -6,9 +6,6 @@ const FlagImg = styled.img`
   display: flex;
   align-self: flex-start;
   margin-right: 16px;
-  @media (max-width: 767px) {
-    display: none;
-  }
 `;
 
 function Flag(props) {
