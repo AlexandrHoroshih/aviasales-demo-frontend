@@ -4,6 +4,7 @@ import Destinations from "./Destinations";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import BestPrices from "./BestPrices";
+import Slider from "./AgencySlider";
 
 const Main = () => (
   <div>
@@ -13,6 +14,7 @@ const Main = () => (
     <Header />
     <Destinations />
     <BestPrices />
+    <Slider />
   </div>
 );
 

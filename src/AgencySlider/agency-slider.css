@@ -1,0 +1,41 @@
+.slider-button {
+  border: none;
+  background: none;
+}
+
+.back {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+}
+
+.next {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+
+.dot {
+  margin-top: 10px;
+}
+
+.dot button {
+  display: inline-block;
+  margin-right: 8px;
+  margin-left: 8px;
+  height: 13px;
+  width: 13px;
+  background: rgba(0, 0, 0, 0.0001);
+  border: 1px solid #818181;
+  border-radius: 50%;
+}
+
+.dot button:hover {
+  background: #818181;
+}
+
+@media (max-width: 768px) {
+  .slider-md li {
+    padding-bottom: 8% !important;
+  }
+}
