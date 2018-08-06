@@ -19,6 +19,9 @@ import ka from "./ka.png";
 
 const Background = styled.div`
   background: #f8fcff;
+  @media (max-width: 576px) {
+    display: none;
+  }
 `;
 
 const Title = styled.h1`
