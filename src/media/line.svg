@@ -1,0 +1,9 @@
+<svg width="1440" height="7" viewBox="0 0 1440 7" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1440V7H0V0Z" fill="url(#pattern0)"/>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="0.025" height="1.28571">
+<use xlink:href="#image0" transform="scale(0.000694444 0.142857)"/>
+</pattern>
+<image id="image0" width="36" height="9" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAMAAABt7H5CAAAAMFBMVEX///8Bsd7/igdn0ewWt+H/lBz/5sn/0Jv/9er/pD3/uWs4wuXq+PzI7viN3PCk4/OBSFYXAAAAXElEQVQYGX3OOQ4AMQhDUbLvyf1vO41/mkhDaT0DZpriNZ1kO00gec15TGZPo7UwgyQnoVYVrSg0ppKKSZiJidc07UlZrTm0Jy6OYTzGMO6aztOFVuDpQ/JjtswHkh0CaqhgJRAAAAAASUVORK5CYII="/>
+</defs>
+</svg>

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import BestPrices from "./BestPrices";
 import Slider from "./AgencySlider";
+import Subscribe from "./Subscribe";
 
 const Main = () => (
   <div>
@@ -15,6 +16,7 @@ const Main = () => (
     <Destinations />
     <BestPrices />
     <Slider />
+    <Subscribe />
   </div>
 );
 
