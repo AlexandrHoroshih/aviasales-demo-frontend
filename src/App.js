@@ -7,6 +7,7 @@ import BestPrices from "./BestPrices";
 import Slider from "./AgencySlider";
 import Subscribe from "./Subscribe";
 import Specials from "./SpecialPrices";
+import Articles from "./Articles";
 
 const Main = () => (
   <div>
@@ -19,6 +20,7 @@ const Main = () => (
     <Slider />
     <Subscribe />
     <Specials />
+    <Articles />
   </div>
 );
 
