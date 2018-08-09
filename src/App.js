@@ -9,6 +9,7 @@ import Subscribe from "./Subscribe";
 import Specials from "./SpecialPrices";
 import Articles from "./Articles";
 import MobileApp from "./MobileApp";
+import Footer from "./Footer";
 
 const Main = () => (
   <div>
@@ -23,6 +24,7 @@ const Main = () => (
     <Specials />
     <Articles />
     <MobileApp />
+    <Footer />
   </div>
 );
 
