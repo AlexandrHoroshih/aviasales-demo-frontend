@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import BestPrices from "./BestPrices";
 import Slider from "./AgencySlider";
 import Subscribe from "./Subscribe";
+import Specials from "./SpecialPrices";
 
 const Main = () => (
   <div>
@@ -17,6 +18,7 @@ const Main = () => (
     <BestPrices />
     <Slider />
     <Subscribe />
+    <Specials />
   </div>
 );
 
