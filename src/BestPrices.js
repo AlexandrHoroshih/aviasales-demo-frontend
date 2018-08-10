@@ -16,8 +16,8 @@ const prices = [
     ]
   },
   {
-    country: "Россия",
-    city: "Симферополь(Крым)",
+    country: "Армения",
+    city: "Ереван",
     depart: [
       { from: "Москвы", price: 4813 },
       { from: "Санкт-Петербурга", price: 7857 },
@@ -27,8 +27,8 @@ const prices = [
     ]
   },
   {
-    country: "Россия",
-    city: "Симферополь(Крым)",
+    country: "Молдавия",
+    city: "Кишинёв",
     depart: [
       { from: "Москвы", price: 4813 },
       { from: "Санкт-Петербурга", price: 7857 },
