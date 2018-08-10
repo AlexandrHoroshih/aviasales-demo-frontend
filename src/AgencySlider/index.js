@@ -37,7 +37,7 @@ const Title = styled.h1`
   color: #5c5c5c;
 `;
 
-const Wrapper = styled.div`
+const SliderWrapper = styled.div`
   position: relative;
   height: 150px;
 `;
@@ -59,12 +59,16 @@ const ArrowBack = styled.img`
 
 const ArrowNext = styled.img``;
 
+const Wrapper = styled.div`
+  text-align: center;
+`;
+
 class AgencySlider extends Component {
   render() {
     return (
       <Background>
-        <div className="row center-xs">
-          <div className="col-xs-12 col-md-10">
+        <div className="container">
+          <Wrapper>
             <Title>
               Дешёвые авиабилеты от крупнейших авиакомпаний и агенств
             </Title>
@@ -73,7 +77,7 @@ class AgencySlider extends Component {
               naturalSlideHeight={7}
               totalSlides={2}
             >
-              <Wrapper>
+              <SliderWrapper>
                 <Slider classNameTray="slider-md">
                   <Slide index={0}>
                     <SlideContent>
@@ -97,9 +101,9 @@ class AgencySlider extends Component {
                   <ArrowNext src={arrow} alt="next" />
                 </ButtonNext>
                 <DotGroup className="slider-button dot" />
-              </Wrapper>
+              </SliderWrapper>
             </CarouselProvider>
-          </div>
+          </Wrapper>
         </div>
       </Background>
     );

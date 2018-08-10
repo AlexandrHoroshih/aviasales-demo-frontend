@@ -23,9 +23,10 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
   }
-  margin-top: 32px;
-  margin-bottom: 24px;
+  padding-top: 32px;
+  padding-bottom: 24px;
 `;
 
 const Text = styled.div`
@@ -116,28 +117,26 @@ class Subscribe extends Component {
     return (
       <Background>
         <Line src={line} alt="" />
-        <div className="row center-xs">
-          <div className="col-xs-12 col-md-10">
-            <Wrapper>
-              <Text>
-                <h1>Хотите знать всё о скидках на авиабилеты?</h1>
-                <p>
-                  Вы можете подписаться на нашу рассылку через соцсети или по
-                  электронной почте.
-                </p>
-              </Text>
-              <ButtonsBlock>
-                <Button src={twitter} />
-                <Button src={vk} />
-                <Button src={fb} />
-                <Button src={rss} />
-              </ButtonsBlock>
-              <Email>
-                <input placeholder="Ваш email" />
-                <button>Подписаться</button>
-              </Email>
-            </Wrapper>
-          </div>
+        <div className="container">
+          <Wrapper>
+            <Text>
+              <h1>Хотите знать всё о скидках на авиабилеты?</h1>
+              <p>
+                Вы можете подписаться на нашу рассылку через соцсети или по
+                электронной почте.
+              </p>
+            </Text>
+            <ButtonsBlock>
+              <Button src={twitter} />
+              <Button src={vk} />
+              <Button src={fb} />
+              <Button src={rss} />
+            </ButtonsBlock>
+            <Email>
+              <input placeholder="Ваш email" />
+              <button>Подписаться</button>
+            </Email>
+          </Wrapper>
         </div>
       </Background>
     );

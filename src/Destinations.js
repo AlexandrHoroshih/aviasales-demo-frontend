@@ -79,25 +79,23 @@ export default function() {
           </Categories>
         </div>
       </div>
-      <div className="row center-xs">
-        <div className="col-xs-12 col-md-10">
-          <Destinations>
-            <div className="row center-xs">
-              {cards.map((card, index) => (
-                <div className="col-lg-6">
-                  <Card
-                    key={card.index}
-                    country={card.country}
-                    img={card.img}
-                    city={card.city}
-                    price={card.price}
-                    date={card.date}
-                  />
-                </div>
-              ))}
-            </div>
-          </Destinations>
-        </div>
+      <div className="container">
+        <Destinations>
+          <div className="row center-xs">
+            {cards.map((card, index) => (
+              <div className="col-lg-6">
+                <Card
+                  key={card.index}
+                  country={card.country}
+                  img={card.img}
+                  city={card.city}
+                  price={card.price}
+                  date={card.date}
+                />
+              </div>
+            ))}
+          </div>
+        </Destinations>
       </div>
     </Background>
   );

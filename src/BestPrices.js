@@ -172,13 +172,28 @@ class Departures extends Component {
   }
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: flex-start;
+  justify-content: center;
+`;
+
+const HeadWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 export default function() {
   return (
     <Background>
-      <div className="row center-xs">
-        <div className="col-xs-12 col-md-10">
-          <Logo src={best} />
-          <Title>Лучшие цены на авиабилеты за последний месяц</Title>
+      <div className="container">
+        <Wrapper>
+          <HeadWrapper>
+            <Logo src={best} />
+            <Title>Лучшие цены на авиабилеты за последний месяц</Title>
+          </HeadWrapper>
           <ListWrapper>
             {prices.map((price, index) => (
               <Prices>
@@ -202,7 +217,7 @@ export default function() {
               офертой.
             </span>
           </Subtitle>
-        </div>
+        </Wrapper>
       </div>
     </Background>
   );

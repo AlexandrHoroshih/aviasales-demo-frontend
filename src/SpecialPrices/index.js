@@ -52,7 +52,7 @@ const Title = styled.div`
   font-size: 30px;
 
   color: #ffffff;
-  margin: 24px 0 20px 0;
+  padding: 24px 0 20px 0;
 `;
 
 const SpecialsFooter = styled.div`
@@ -64,7 +64,7 @@ const SpecialsFooter = styled.div`
   line-height: 20px;
   font-size: 16px;
   color: #ffffff;
-  margin: 25px 0 23px 0;
+  padding: 25px 0 23px 0;
 
   & a {
     text-decoration: underline;
@@ -96,28 +96,24 @@ export default function() {
   return (
     <Background>
       <div className="container">
-        <div className="row">
-          <div className="col-xs-12">
-            <Title>Спецпредложения на авиабилеты</Title>
-            <Cards>
-              {specials.map((special, index) => (
-                <SpecialCard
-                  key={special.index}
-                  destination={special.destination}
-                  price={special.price}
-                  alliance={special.alliance}
-                  company={special.company}
-                  logo={special.logo}
-                  daysleft={special.daysleft}
-                />
-              ))}
-            </Cards>
-            <SpecialsFooter>
-              <a>Смотреть все спецпредложения</a>
-              <span>*средняя цена по направлению</span>
-            </SpecialsFooter>
-          </div>
-        </div>
+        <Title>Спецпредложения на авиабилеты</Title>
+        <Cards>
+          {specials.map((special, index) => (
+            <SpecialCard
+              key={special.index}
+              destination={special.destination}
+              price={special.price}
+              alliance={special.alliance}
+              company={special.company}
+              logo={special.logo}
+              daysleft={special.daysleft}
+            />
+          ))}
+        </Cards>
+        <SpecialsFooter>
+          <a>Смотреть все спецпредложения</a>
+          <span>*средняя цена по направлению</span>
+        </SpecialsFooter>
       </div>
     </Background>
   );
