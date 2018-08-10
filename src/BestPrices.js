@@ -177,6 +177,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: flex-start;
   justify-content: center;
+  margin: 0 -8px 0 -8px;
 `;
 
 const HeadWrapper = styled.div`

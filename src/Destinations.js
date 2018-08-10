@@ -55,28 +55,30 @@ const Destinations = styled.div`
 export default function() {
   return (
     <Background>
-      <div className="row center-xs">
-        <div className="col-xs-12 col-md-10 col-lg-6">
-          <Logo src={logo} />
-          <Title>
-            Популярные направления перелетов<br />
-            из города{" "}
-            <CityPicker>
-              Москва<EditButton>
-                <EditIcon src={edit} />
-              </EditButton>
-            </CityPicker>
-          </Title>
-          <Categories>
-            {category.map((cat, index) => (
-              <Category
-                key={cat.index}
-                active={cat.active}
-                img={cat.img}
-                title={cat.title}
-              />
-            ))}
-          </Categories>
+      <div className="container">
+        <div className="row center-xs">
+          <div className="col-xs-12 col-md-10 col-lg-6">
+            <Logo src={logo} />
+            <Title>
+              Популярные направления перелетов<br />
+              из города{" "}
+              <CityPicker>
+                Москва<EditButton>
+                  <EditIcon src={edit} />
+                </EditButton>
+              </CityPicker>
+            </Title>
+            <Categories>
+              {category.map((cat, index) => (
+                <Category
+                  key={cat.index}
+                  active={cat.active}
+                  img={cat.img}
+                  title={cat.title}
+                />
+              ))}
+            </Categories>
+          </div>
         </div>
       </div>
       <div className="container">
