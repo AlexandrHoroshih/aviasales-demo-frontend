@@ -129,7 +129,7 @@ const DetailsInputs = styled.div`
   margin-top: 2px;
   @media (max-width: 576px) {
     flex-wrap: wrap;
-    margin-top: 1px;
+    margin-top: 2px;
   }
 
   @media (min-width: 1200px) {
@@ -142,6 +142,9 @@ const Dates = styled.div`
   display: flex;
   flex-direction: row;
   flex-basis: 60%;
+  @media (max-width: 1024px) {
+    flex-basis: 50%;
+  }
   flex-wrap: nowrap;
   margin-right: 2px;
   @media (max-width: 576px) {
@@ -206,6 +209,10 @@ const PassengerWrapper = styled.div`
   position: relative;
   flex-basis: 40%;
 
+  @media (max-width: 1024px) {
+    flex-basis: 50%;
+  }
+
   @media (max-width: 576px) {
     flex-basis: 100%;
   }
@@ -263,17 +270,13 @@ const SearchButton = styled.button`
   border: none;
   background: #ff9241;
   border-radius: 4px;
-
-  padding-top: 15px;
-  padding-left: 45px;
-  padding-bottom: 16px;
-
+  padding: 15px 0 16px 45px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   font-size: 28px;
-
+  max-width: 308px;
   color: #ffffff;
 
   @media (min-width: 1200px) {
@@ -283,6 +286,11 @@ const SearchButton = styled.button`
   @media (max-width: 576px) {
     margin-top: 16px;
     width: 100%;
+    max-width: 576px;
+  }
+
+  @media (max-width: 323px) {
+    padding: 10px 0 11px 40px;
   }
 `;
 
