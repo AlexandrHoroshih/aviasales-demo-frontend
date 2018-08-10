@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import calendar from "./calendar.svg";
 
 const Wrapper = styled.div`
@@ -15,6 +15,15 @@ const Wrapper = styled.div`
     flex-basis: 100%;
     margin-right: 0px;
   }
+
+  ${props =>
+    props.page === "search" &&
+    css`
+      flex-basis: 50%;
+      @media (max-width: 1200px) {
+        flex-basis: 50%;
+      }
+    `};
 `;
 
 const DateTo = styled.div`
@@ -85,7 +94,7 @@ const CalendarButton = styled.button`
 class Dates extends Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper page={this.props.page}>
         <DateTo>
           <DateToInput placeholder="Туда" type="text" />
           <CalendarButton>

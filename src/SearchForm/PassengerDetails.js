@@ -16,6 +16,18 @@ const PassengerWrapper = styled.div`
   @media (max-width: 576px) {
     flex-basis: 100%;
   }
+
+  ${props =>
+    props.page === "search" &&
+    css`
+      flex-basis: 35%;
+      @media (max-width: 1200px) {
+        flex-basis: 25%;
+        & div {
+          border-radius: 0;
+        }
+      }
+    `};
 `;
 
 const Passenger = styled.div`
@@ -220,7 +232,7 @@ class PassengerDetails extends Component {
 
   render() {
     return (
-      <PassengerWrapper>
+      <PassengerWrapper page={this.props.page}>
         <Passenger onClick={this.toggleOpen}>
           {this.state.adult + this.state.baby + this.state.teen} пассажир,{" "}
           <span>эконом</span>
