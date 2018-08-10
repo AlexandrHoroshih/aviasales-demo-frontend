@@ -28,6 +28,13 @@ const Phone = styled.img`
   z-index: 1;
   left: 0;
   bottom: 0;
+  @media (max-width: 576px) {
+    height: 213px;
+  }
+
+  @media (max-width: 330px) {
+    height: 180px;
+  }
 `;
 
 const Info = styled.div`
@@ -86,10 +93,13 @@ const Apps = styled.div`
   @media (max-width: 576px) {
     flex-direction: column;
     justify-content: flex-end;
-    margin: 117px 0 117px 0;
+    margin: 56px 0 57px 0;
     & div {
       border: none;
     }
+  }
+  @media (max-width: 330px) {
+    margin: 40px 0 40px 0;
   }
 `;
 
