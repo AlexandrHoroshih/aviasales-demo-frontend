@@ -10,6 +10,8 @@ import Specials from "./SpecialPrices";
 import Articles from "./Articles";
 import MobileApp from "./MobileApp";
 import Footer from "./Footer";
+import Results from "./SearchResults";
+import SearchHeader from "./SearchHeader";
 
 const Main = () => (
   <div>
@@ -33,7 +35,9 @@ const Search = () => (
     <Helmet>
       <title>Выбирай и лети!</title>
     </Helmet>
-    <h2>content</h2>
+    <SearchHeader />
+    <Results />
+    <Footer />
   </div>
 );
 
