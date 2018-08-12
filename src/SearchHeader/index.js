@@ -6,6 +6,7 @@ import Departure from "../SearchForm/Departure";
 import Destination from "../SearchForm/Destination";
 import Dates from "../SearchForm/Dates";
 import PassengerDetails from "../SearchForm/PassengerDetails";
+import back from "./back.svg";
 
 const Background = styled.div`
   font-family: Roboto;
@@ -23,22 +24,98 @@ const Background = styled.div`
   );
 `;
 
+const LogoWrapper = styled.div`
+  display: flex;
+  padding-top: 12px;
+  flex-direction: flex-start;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 576px) {
+    padding: 10px 0 10px 0;
+  }
+`;
+
 const Logo = styled.img`
-  margin-top: 12px;
+  height: 29px;
+  @media (max-width: 576px) {
+    display: none;
+  }
+`;
+
+const Back = styled(Link)`
+  display: none;
+  @media (max-width: 576px) {
+    display: inline;
+  }
+`;
+
+const Details = styled.div`
+  display: none;
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 26px;
+  }
+
+  & h1 {
+    margin: 0;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  & h2 {
+    margin: 0;
+    font-weight: 500;
+    line-height: 16px;
+    font-size: 12px;
+
+    color: #ffffff;
+
+    & span {
+      width: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+  }
+`;
+
+const Cash = styled.span`
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 16px;
+  text-align: center;
+  padding: 8px 20px 8px 20px;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+
+  @media (max-width: 576px) {
+    padding: 6px 12px 5px 12px;
+  }
 `;
 
 const SearchForm = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 40px;
+  margin-top: 32px;
   padding-bottom: 32px;
   width: 100%;
   @media (min-width: 1200px) {
     flex-direction: row;
     height: 56px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     display: none;
   }
 `;
@@ -51,7 +128,7 @@ const FlightInputs = styled.div`
   }
   width: 100%;
   @media (min-width: 1200px) {
-    flex-basis: 38%;
+    flex-basis: 30%;
   }
 `;
 
@@ -61,7 +138,7 @@ const DetailsInputs = styled.div`
   width: 100%;
   margin-top: 2px;
   @media (min-width: 1200px) {
-    flex-basis: 62%;
+    flex-basis: 70%;
     margin-top: 0px;
   }
 `;
@@ -99,18 +176,46 @@ const SearchLink = styled(Link)`
 `;
 
 class SearchHeader extends Component {
+  state = {
+    departure: "Москва",
+    destination: "Барселона",
+    from: "24 февраля, сб",
+    back: "3 марта, сб"
+  };
+
   render() {
     return (
       <Background>
         <div className="container">
-          <Logo src={logo} />
+          <LogoWrapper>
+            <Logo src={logo} />
+            <Back to="/">
+              <img src={back} alt="на главную" />
+            </Back>
+            <Details>
+              <h1>
+                {this.state.departure} — {this.state.destination}
+              </h1>
+              <h2>
+                <span>{this.state.from}</span> — <span>{this.state.back}</span>,
+                1 пассажир
+              </h2>
+            </Details>
+            <div>
+              <Cash>Rub</Cash>
+            </div>
+          </LogoWrapper>
           <SearchForm>
             <FlightInputs>
-              <Departure />
-              <Destination />
+              <Departure value={this.state.departure} />
+              <Destination value={this.state.destination} />
             </FlightInputs>
             <DetailsInputs>
-              <Dates page="search" />
+              <Dates
+                page="search"
+                from={this.state.from}
+                back={this.state.back}
+              />
               <PassengerDetails page="search" />
               <SearchButton>
                 <SearchLink to="/Search">Найти билеты</SearchLink>

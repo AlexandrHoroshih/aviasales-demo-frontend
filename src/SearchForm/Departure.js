@@ -63,7 +63,11 @@ class Departure extends Component {
   render() {
     return (
       <Wrapper>
-        <Input placeholder="Город вылета" type="text" />
+        <Input
+          placeholder="Город вылета"
+          type="text"
+          value={this.props.value}
+        />
         <IATA>mow</IATA>
         <ReverseButton>
           <img src={reverse} alt="reverse departure and destination points" />

@@ -96,13 +96,13 @@ class Dates extends Component {
     return (
       <Wrapper page={this.props.page}>
         <DateTo>
-          <DateToInput placeholder="Туда" type="text" />
+          <DateToInput placeholder="Туда" type="text" value={this.props.from} />
           <CalendarButton>
             <img src={calendar} alt="calendar date picker" />
           </CalendarButton>
         </DateTo>
         <DateBack>
-          <DateBackInput placeholder="Обратно" type="text" />
+          <DateBackInput placeholder="Обратно" type="text" value={this.props.back} />
           <CalendarButton>
             <img src={calendar} alt="calendar date picker" />
           </CalendarButton>

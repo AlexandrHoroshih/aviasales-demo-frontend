@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import arrow from "../media/darrow.svg";
 import minus from "./minus.svg";
 import plus from "./plus.svg";
+import Checkbox from "../Checkbox";
 
 const PassengerWrapper = styled.div`
   display: flex;
@@ -60,6 +61,20 @@ const Passenger = styled.div`
     props.open === true &&
     css`
       border: 2px solid #ff9241;
+    `};
+`;
+
+const InputWrapper = styled.div`
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  ${props =>
+    props.page === "search" &&
+    css`
+      @media (max-width: 768px) {
+        width: 140px;
+      }
     `};
 `;
 
@@ -155,25 +170,6 @@ const FlightClass = styled.div`
   border-top: 1px solid #dbdbdb;
   margin-top: 8px;
   padding-top: 4px;
-
-  & span {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 36px;
-    font-size: 12px;
-
-    color: #4a4a4a;
-  }
-`;
-
-const Checkbox = styled.button`
-  width: 18px;
-  height: 18px;
-  border: 1px solid #00ace2;
-  border-radius: 4px;
-  background: #ffffff;
-  margin-right: 6px;
 `;
 
 class PassengerDetails extends Component {
@@ -234,8 +230,10 @@ class PassengerDetails extends Component {
     return (
       <PassengerWrapper page={this.props.page}>
         <Passenger onClick={this.toggleOpen}>
-          {this.state.adult + this.state.baby + this.state.teen} пассажир,{" "}
-          <span>эконом</span>
+          <InputWrapper page={this.props.page}>
+            {this.state.adult + this.state.baby + this.state.teen} пассажир,{" "}
+            <span>эконом</span>
+          </InputWrapper>
         </Passenger>
         <DropdownButton onClick={this.toggleOpen}>
           <DropdownArrow
@@ -268,7 +266,8 @@ class PassengerDetails extends Component {
             </Amount>
             <Amount>
               <span>
-                Дети до 2 лет<br />
+                Дети до 2 лет
+                <br />
                 <span>Без места</span>
               </span>
               <Minus onClick={this.minusBaby}>
@@ -280,8 +279,7 @@ class PassengerDetails extends Component {
               </Plus>
             </Amount>
             <FlightClass>
-              <Checkbox />
-              <span>Бизнес-класс</span>
+              <Checkbox label="Бизнес-класс" />
             </FlightClass>
           </Info>
         )}

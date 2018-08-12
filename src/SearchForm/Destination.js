@@ -34,7 +34,11 @@ class Destination extends Component {
   render() {
     return (
       <Wrapper>
-        <Input placeholder="Город прибытия" type="text" />
+        <Input
+          placeholder="Город прибытия"
+          type="text"
+          value={this.props.value}
+        />
       </Wrapper>
     );
   }
