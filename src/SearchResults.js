@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Card from "./ResultCard";
+import Filters from "./Filters";
 import { results } from "./ResultsArray";
 
 const Background = styled.section`
@@ -18,6 +19,7 @@ const FlitersWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   flex-basis: 25%;
+  margin-right: 16px;
   @media (max-width: 1024px;) {
     display: none;
   }
@@ -32,13 +34,40 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const MoreButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  background: #00acde;
+  width: 100%;
+  padding: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+`;
+
 class Results extends Component {
+  state = {
+    departure: "Москва",
+    destination: "Барселона"
+  };
+
   render() {
     return (
       <Background>
         <div className="container">
           <Wrapper>
-            <FlitersWrapper>Filters</FlitersWrapper>
+            <FlitersWrapper>
+              <Filters
+                departure={this.state.departure}
+                destination={this.state.destination}
+              />
+            </FlitersWrapper>
             <ContentWrapper>
               {results.map((res, index) => (
                 <Card
@@ -48,15 +77,16 @@ class Results extends Component {
                   price={res.price}
                   source={res.source}
                   isCharter={res.isCharter}
-                  departure={res.departure}
+                  departure={this.state.departure}
                   depTime={res.depTime}
-                  destination={res.destination}
+                  destination={this.state.destination}
                   desTime={res.desTime}
                   isBack={res.isBack}
                   backDepTime={res.backDepTime}
                   backDesTime={res.backDesTime}
                 />
               ))}
+              <MoreButton>Показать ещё 10 билетов</MoreButton>
             </ContentWrapper>
           </Wrapper>
         </div>

@@ -9,7 +9,6 @@ const PassengerWrapper = styled.div`
   display: flex;
   position: relative;
   flex-basis: 40%;
-
   @media (max-width: 1024px) {
     flex-basis: 50%;
   }
@@ -189,7 +188,7 @@ class PassengerDetails extends Component {
   };
 
   minusAd = () => {
-    if (this.state.adult > 0) {
+    if (this.state.adult > 1) {
       let param = this.state.adult;
       param -= 1;
       this.setState({ adult: param });
