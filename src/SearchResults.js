@@ -20,7 +20,7 @@ const FlitersWrapper = styled.div`
   flex-flow: column nowrap;
   flex-basis: 25%;
   margin-right: 16px;
-  @media (max-width: 1024px;) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
