@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import Checkbox from "../Checkbox";
-import arrow from "../media/darrow.svg";
+import arrow from "./filter-arrow.svg";
 import flight from "../media/flight.svg";
 import Slider from "./Slider";
 
@@ -24,9 +24,9 @@ const ShowContent = styled.div`
 
 const FilterArrow = styled.img`
   ${props =>
-    props.open === false &&
+    props.open === true &&
     css`
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
     `};
   margin-right: 6px;
 `;

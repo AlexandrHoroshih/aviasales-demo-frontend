@@ -1,5 +1,6 @@
 const results = [
   {
+    status: "cheapest",
     handLuggage: 5,
     baggage: 15,
     optionalBaggage: null,
@@ -8,6 +9,7 @@ const results = [
     companyFirst: "Россия",
     companySecond: null,
     isCharter: true,
+    time: "5ч",
     departure: "Москва",
     destination: "Барселона",
     depTime: "00:05",
@@ -17,6 +19,7 @@ const results = [
     backDesTime: "17:10"
   },
   {
+    status: "fastest",
     handLuggage: 10,
     baggage: 20,
     optionalBaggage: null,
@@ -25,6 +28,7 @@ const results = [
     companyFirst: "Россия",
     companySecond: null,
     isCharter: true,
+    time: "4ч30м",
     departure: "Москва",
     destination: "Барселона",
     depTime: "10:05",
@@ -34,6 +38,7 @@ const results = [
     backDesTime: "18:10"
   },
   {
+    status: "best",
     handLuggage: 2,
     baggage: null,
     optionalBaggage: null,
@@ -42,6 +47,7 @@ const results = [
     companyFirst: "Россия",
     companySecond: null,
     isCharter: false,
+    time: "6ч",
     departure: "Москва",
     destination: "Барселона",
     depTime: "00:05",
@@ -59,6 +65,7 @@ const results = [
     companyFirst: "Россия",
     companySecond: null,
     isCharter: false,
+    time: "6ч",
     departure: "Москва",
     destination: "Барселона",
     depTime: "00:05",
@@ -76,6 +83,7 @@ const results = [
     companyFirst: "Россия",
     companySecond: null,
     isCharter: false,
+    time: "6ч",
     departure: "Москва",
     destination: "Барселона",
     depTime: "00:05",
@@ -93,6 +101,7 @@ const results = [
     companyFirst: "Россия",
     companySecond: null,
     isCharter: false,
+    time: "6ч",
     departure: "Москва",
     destination: "Барселона",
     depTime: "00:05",
@@ -110,6 +119,7 @@ const results = [
     companyFirst: "Россия",
     companySecond: null,
     isCharter: false,
+    time: "6ч",
     departure: "Москва",
     destination: "Барселона",
     depTime: "00:05",
@@ -127,6 +137,7 @@ const results = [
     companyFirst: "Россия",
     companySecond: null,
     isCharter: false,
+    time: "6ч",
     departure: "Москва",
     destination: "Барселона",
     depTime: "00:05",

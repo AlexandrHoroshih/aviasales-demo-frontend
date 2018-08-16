@@ -17,10 +17,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
+  max-width: 755px;
   min-height: 269px;
   margin: 0 0 20px 0;
   border-radius: 4px;
   background: #ffffff;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const BuyWrapper = styled.div`
@@ -328,7 +333,7 @@ class ResultCard extends Component {
               <FlightTimeWrapper>
                 <FlightTime>
                   <img src={plane} alt="" />
-                  Всего: 5ч
+                  Всего: {this.props.time}
                   <Landing src={plane} alt="" />
                 </FlightTime>
                 <LineWrapper>
