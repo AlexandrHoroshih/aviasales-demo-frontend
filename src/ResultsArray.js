@@ -70,9 +70,9 @@ const results = [
     destination: "Барселона",
     depTime: "00:05",
     desTime: "03:05",
-    isBack: false,
-    backDepTime: null,
-    backDesTime: null
+    isBack: true,
+    backDepTime: "01:00",
+    backDesTime: "03:00"
   },
   {
     handLuggage: 2,
@@ -118,15 +118,15 @@ const results = [
     source: "Агенство билетов",
     companyFirst: "Россия",
     companySecond: null,
-    isCharter: false,
+    isCharter: true,
     time: "6ч",
     departure: "Москва",
     destination: "Барселона",
     depTime: "00:05",
     desTime: "03:05",
-    isBack: false,
-    backDepTime: null,
-    backDesTime: null
+    isBack: true,
+    backDepTime: "00:05",
+    backDesTime: "02:05"
   },
   {
     handLuggage: 2,

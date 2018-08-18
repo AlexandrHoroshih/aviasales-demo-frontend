@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import logo from "../Header/logo.png";
+import logo from "./Header/logo.png";
 import { Link } from "react-router-dom";
-import Departure from "../SearchForm/Departure";
-import Destination from "../SearchForm/Destination";
-import Dates from "../SearchForm/Dates";
-import PassengerDetails from "../SearchForm/PassengerDetails";
-import back from "./back.svg";
+import Departure from "./SearchForm/Departure";
+import Destination from "./SearchForm/Destination";
+import Dates from "./SearchForm/Dates";
+import PassengerDetails from "./SearchForm/PassengerDetails";
+import back from "./media/back.svg";
 
 const Background = styled.div`
   font-family: Roboto;
@@ -93,9 +93,7 @@ const Cash = styled.span`
   font-size: 16px;
   text-align: center;
   padding: 8px 20px 8px 20px;
-
   color: #ffffff;
-
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 100px;
 
@@ -128,7 +126,7 @@ const FlightInputs = styled.div`
   }
   width: 100%;
   @media (min-width: 1200px) {
-    flex-basis: 30%;
+    flex-basis: 40%;
   }
 `;
 
@@ -138,7 +136,7 @@ const DetailsInputs = styled.div`
   width: 100%;
   margin-top: 2px;
   @media (min-width: 1200px) {
-    flex-basis: 70%;
+    flex-basis: 60%;
     margin-top: 0px;
   }
 `;
@@ -179,8 +177,8 @@ class SearchHeader extends Component {
   state = {
     departure: "Москва",
     destination: "Барселона",
-    from: "24 февраля, сб",
-    back: "3 марта, сб"
+    from: "24 фев, сб",
+    back: "3 мар, сб"
   };
 
   render() {
@@ -188,7 +186,9 @@ class SearchHeader extends Component {
       <Background>
         <div className="container">
           <LogoWrapper>
-            <Logo src={logo} />
+            <Link to="/">
+              <Logo src={logo} />
+            </Link>
             <Back to="/">
               <img src={back} alt="на главную" />
             </Back>

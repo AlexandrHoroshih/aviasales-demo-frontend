@@ -11,7 +11,6 @@ const SearchForm = styled.div`
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -113,7 +112,8 @@ export default function() {
       </DetailsInputs>
       <SearchButton>
         <SearchLink to="/Search">
-          Найти билеты<Plane src={aero} alt="Search" />
+          Найти билеты
+          <Plane src={aero} alt="Search" />
         </SearchLink>
       </SearchButton>
     </SearchForm>

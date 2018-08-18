@@ -31,6 +31,15 @@ const FilterArrow = styled.img`
   margin-right: 6px;
 `;
 
+const Count = styled.span`
+  font-weight: 500;
+  line-height: 18px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #a0b0b9;
+  margin-left: 8px;
+`;
+
 const Content = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -238,7 +247,7 @@ class Filter extends Component {
       <FilterWrapper>
         <ShowContent onClick={this.toggleOpen}>
           <FilterArrow open={this.state.isOpen} src={arrow} alt="open/close" />
-          {this.props.title}
+          {this.props.title} <Count>{this.props.count}</Count>
         </ShowContent>
         {this.state.isOpen && (
           <FilterType

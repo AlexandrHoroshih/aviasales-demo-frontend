@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     css`
       flex-basis: 50%;
       @media (max-width: 1200px) {
-        flex-basis: 50%;
+        flex-basis: 50.3%;
       }
     `};
 `;
@@ -102,7 +102,11 @@ class Dates extends Component {
           </CalendarButton>
         </DateTo>
         <DateBack>
-          <DateBackInput placeholder="Обратно" type="text" value={this.props.back} />
+          <DateBackInput
+            placeholder="Обратно"
+            type="text"
+            value={this.props.back}
+          />
           <CalendarButton>
             <img src={calendar} alt="calendar date picker" />
           </CalendarButton>

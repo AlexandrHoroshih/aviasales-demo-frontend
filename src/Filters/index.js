@@ -36,6 +36,7 @@ const filters = [
   },
   {
     title: "Авиакомпании",
+    count: 43,
     initialState: true,
     content: [
       {
@@ -68,10 +69,12 @@ const filters = [
     title: "Аэропорты"
   },
   {
-    title: "Аэропорт пересадки"
+    title: "Аэропорт пересадки",
+    count: 23
   },
   {
-    title: "Агенства"
+    title: "Агенства",
+    count: 7
   }
 ];
 
@@ -120,6 +123,7 @@ class Filters extends Component {
           <Filter
             key={index}
             title={filter.title}
+            count={filter.count}
             type={filter.type}
             content={filter.content}
             departure={this.props.departure}

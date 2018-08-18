@@ -32,15 +32,14 @@ const FlitersWrapper = styled.div`
   @media (max-width: 1024px) {
     display: none;
     ${props =>
-      props.open === true &&
+      props.isOpen === true &&
       css`
         display: flex;
         max-width: 299px;
         position: absolute;
         z-index: 1;
-        top: 16px;
-        margin-left: auto;
-        margin-right: auto;
+        top: 30px;
+        left: 30px;
         box-shadow: 0px 2px 12px rgba(0, 75, 93, 0.12);
       `};
   }
@@ -71,6 +70,7 @@ const MoreButton = styled.button`
   background: #00acde;
   width: 100%;
   padding: 18px;
+  margin-bottom: 16px;
   font-weight: 500;
   line-height: 18px;
   font-size: 14px;
@@ -91,7 +91,9 @@ const FilterButtonWrapper = styled.div`
   }
 
   @media (max-width: 767px) {
-    display: none;
+    position: sticky;
+    top: 10px;
+    z-index: 1;
   }
 `;
 
@@ -103,6 +105,59 @@ const FilterButton = styled.div`
   border: none;
   border-radius: 10px;
   padding: 17px 24px 17px 24px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const UpButton = styled.a`
+  @media (min-width: 768px) {
+    display: none;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 100px;
+  width: 88px;
+  height: 28px;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background: #00ace2;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  border-radius: 100px;
+`;
+
+const FilterBottomButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 16px 0 16px 0;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const FilterBottomButtom = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #23a9f6;
+  border: none;
+  border-radius: 100px;
+  width: 150px;
+  height: 40px;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
 `;
 
 class Results extends Component {
@@ -112,7 +167,7 @@ class Results extends Component {
     filterIsOpen: false
   };
 
-  filterModal = () => {
+  toggleOpen = () => {
     if (this.state.filterIsOpen) {
       this.setState({ filterIsOpen: false });
     } else {
@@ -124,13 +179,14 @@ class Results extends Component {
     return (
       <Background>
         <FilterButtonWrapper>
-          <FilterButton onClick={this.filterModal}>
+          <FilterButton onClick={this.toggleOpen}>
             <img src={filters} alt="" />
           </FilterButton>
+          <UpButton href="/#">Наверх</UpButton>
         </FilterButtonWrapper>
         <div className="container">
           <Wrapper>
-            <FlitersWrapper open={this.state.filterIsOpen}>
+            <FlitersWrapper isOpen={this.state.filterIsOpen}>
               <Filters
                 departure={this.state.departure}
                 destination={this.state.destination}
@@ -175,6 +231,11 @@ class Results extends Component {
                 />
               ))}
               <MoreButton>Показать ещё 10 билетов</MoreButton>
+              <FilterBottomButtonWrapper>
+                <FilterBottomButtom onClick={this.toggleOpen}>
+                  Фильтровать
+                </FilterBottomButtom>
+              </FilterBottomButtonWrapper>
             </ContentWrapper>
           </Wrapper>
         </div>
