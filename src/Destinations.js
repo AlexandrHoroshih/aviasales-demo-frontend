@@ -4,7 +4,7 @@ import logo from "./media/Group.svg";
 import edit from "./media/edit.svg";
 import Category, { category } from "./CategoryButtons";
 import Card from "./Card";
-import { cards } from "./CardsArray";
+import cards from "./CardsArray";
 
 const Background = styled.div`
   position: relative;
@@ -60,10 +60,12 @@ export default function() {
           <div className="col-xs-12 col-md-10 col-lg-6">
             <Logo src={logo} />
             <Title>
-              Популярные направления перелетов<br />
+              Популярные направления перелетов
+              <br />
               из города{" "}
               <CityPicker>
-                Москва<EditButton>
+                Москва
+                <EditButton>
                   <EditIcon src={edit} />
                 </EditButton>
               </CityPicker>

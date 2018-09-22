@@ -133,11 +133,9 @@ const App = styled.div`
     }
   }
 
-  ${props =>
-    props.last === true &&
-    css`
-      border-right: none;
-    `};
+  &:last-child {
+    border-right: none;
+  }
 `;
 
 class MobileApp extends Component {
@@ -151,7 +149,8 @@ class MobileApp extends Component {
               <Title>Скачай мобильное приложение Aviasales.ru</Title>
               <Rating>
                 <span>
-                  <img src={rating} alt="4.5 из 5" />Более 103 000 оценок
+                  <img src={rating} alt="4.5 из 5" />
+                  Более 103 000 оценок
                 </span>
               </Rating>
               <Apps>
@@ -163,7 +162,7 @@ class MobileApp extends Component {
                   <img src={android} alt="android" />
                   <a>Android</a>
                 </App>
-                <App last={true}>
+                <App>
                   <img src={windows} alt="windows phone" />
                   <a>Windows Phone</a>
                 </App>

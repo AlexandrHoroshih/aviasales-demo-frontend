@@ -63,51 +63,47 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-class AgencySlider extends Component {
-  render() {
-    return (
-      <Background>
-        <div className="container">
-          <Wrapper>
-            <Title>
-              Дешёвые авиабилеты от крупнейших авиакомпаний и агенств
-            </Title>
-            <CarouselProvider
-              naturalSlideWidth={100}
-              naturalSlideHeight={7}
-              totalSlides={2}
-            >
-              <SliderWrapper>
-                <Slider classNameTray="slider-md">
-                  <Slide index={0}>
-                    <SlideContent>
-                      <img src={aeroflot} alt="aeroflot" />
-                      <img src={s7} alt="s7" />
-                      <img src={onetwo} alt="trip" />
-                      <img src={ka} alt="korea" />
-                      <img src={s7} alt="s7" />
-                    </SlideContent>
-                  </Slide>
-                  <Slide index={1}>
+function AgencySlider() {
+  return (
+    <Background>
+      <div className="container">
+        <Wrapper>
+          <Title>Дешёвые авиабилеты от крупнейших авиакомпаний и агенств</Title>
+          <CarouselProvider
+            naturalSlideWidth={100}
+            naturalSlideHeight={7}
+            totalSlides={2}
+          >
+            <SliderWrapper>
+              <Slider classNameTray="slider-md">
+                <Slide index={0}>
+                  <SlideContent>
+                    <img src={aeroflot} alt="aeroflot" />
                     <img src={s7} alt="s7" />
                     <img src={onetwo} alt="trip" />
                     <img src={ka} alt="korea" />
-                  </Slide>
-                </Slider>
-                <ButtonBack className="slider-button back">
-                  <ArrowBack src={arrow} alt="back" />
-                </ButtonBack>
-                <ButtonNext className="slider-button next">
-                  <ArrowNext src={arrow} alt="next" />
-                </ButtonNext>
-                <DotGroup className="slider-button dot" />
-              </SliderWrapper>
-            </CarouselProvider>
-          </Wrapper>
-        </div>
-      </Background>
-    );
-  }
+                    <img src={s7} alt="s7" />
+                  </SlideContent>
+                </Slide>
+                <Slide index={1}>
+                  <img src={s7} alt="s7" />
+                  <img src={onetwo} alt="trip" />
+                  <img src={ka} alt="korea" />
+                </Slide>
+              </Slider>
+              <ButtonBack className="slider-button back">
+                <ArrowBack src={arrow} alt="back" />
+              </ButtonBack>
+              <ButtonNext className="slider-button next">
+                <ArrowNext src={arrow} alt="next" />
+              </ButtonNext>
+              <DotGroup className="slider-button dot" />
+            </SliderWrapper>
+          </CarouselProvider>
+        </Wrapper>
+      </div>
+    </Background>
+  );
 }
 
 export default AgencySlider;

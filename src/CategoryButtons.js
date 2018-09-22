@@ -71,7 +71,7 @@ const Title = styled.p`
   text-transform: uppercase;
   color: #00ace2;
   ${props =>
-    props.active === true &&
+    props.active &&
     css`
       color: #5c5c5c;
       border-bottom: 1px solid #00ace2;

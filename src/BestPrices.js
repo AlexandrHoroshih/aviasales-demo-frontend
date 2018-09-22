@@ -108,10 +108,11 @@ const DepartureItem = styled.li`
   & + li {
     margin-top: 20px;
   }
-  & span {
-    display: inline-block;
-    color: #00bae8;
-  }
+`;
+
+const DeparturePrice = styled.span`
+  display: inline-block;
+  color: #00bae8;
 `;
 
 const ListWrapper = styled.div`
@@ -149,7 +150,7 @@ const Subtitle = styled.div`
   text-align: center;
   color: #4a4a4a;
 
-  & span {
+  & small {
     margin-top: 16px;
     line-height: 20px;
     font-size: 14px;
@@ -164,7 +165,8 @@ class Departures extends Component {
       <DepartureList>
         {this.props.departure.map(item => (
           <DepartureItem>
-            <a>Из {item.from}</a> <span>от {item.price}</span>
+            <a>Из {item.from}</a>{" "}
+            <DeparturePrice>от {item.price}</DeparturePrice>
           </DepartureItem>
         ))}
       </DepartureList>
@@ -211,12 +213,14 @@ export default function() {
           </ListWrapper>
           <Subtitle>
             Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220
-            стран мира.<br /> Поиск и сравнение цен на авиабилеты среди 100
-            агентств и 728 авиакомпаний.<br />
-            <span>
+            стран мира.
+            <br /> Поиск и сравнение цен на авиабилеты среди 100 агентств и 728
+            авиакомпаний.
+            <br />
+            <small>
               Цены, найденные пользователями за последние 48 часов, не являются
               офертой.
-            </span>
+            </small>
           </Subtitle>
         </Wrapper>
       </div>

@@ -50,7 +50,6 @@ const Content = styled.div`
     font-weight: normal;
     line-height: 16px;
     font-size: 12px;
-
     color: #4a4a4a;
   }
 `;
