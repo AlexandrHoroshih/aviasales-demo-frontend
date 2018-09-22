@@ -9,19 +9,24 @@ const filters = [
     type: "checkboxes",
     initialState: true,
     content: [
-      { name: "Без пересадок", minPrice: 7712 },
-      { name: "1 пересадка", minPrice: 11150 },
-      { name: "2 пересадки", minPrice: 16821 },
-      { name: "3 пересадки", minPrice: 23986 }
+      {
+        group: [
+          { name: "Без пересадок", minPrice: 7712 },
+          { name: "1 пересадка", minPrice: 11150 },
+          { name: "2 пересадки", minPrice: 16821 },
+          { name: "3 пересадки", minPrice: 23986 }
+        ]
+      }
     ]
   },
   {
     title: "Время вылета и прибытия",
     type: "sliders",
     initialState: true,
+    isBack: true,
     content: [
-      { name: "Вылет из", handles: "daytime" },
-      { name: "Прибытие в", handles: "daytime" }
+      { name: "Вылет из", handles: "daytime", usedForDeparture: true },
+      { name: "Прибытие в", handles: "daytime", usedForDeparture: false }
     ]
   },
   {
@@ -32,12 +37,23 @@ const filters = [
   },
   {
     title: "Время в пути",
-    initialState: true
+    type: "sliders",
+    initialState: true,
+    isBack: true,
+    content: [{ name: null, handles: "time", usedForDeparture: false }]
   },
   {
     title: "Авиакомпании",
+    type: "checkboxes",
     count: 43,
     initialState: true,
+    specialCheck: [
+      {
+        title: "Несколько авиакомпаний",
+        description:
+          "Показывать билеты с перелетами, выполняемыми несколькими авиакомпаниями, включая выбранную"
+      }
+    ],
     content: [
       {
         groupTitle: "Альянсы",
@@ -126,6 +142,8 @@ class Filters extends Component {
             count={filter.count}
             type={filter.type}
             content={filter.content}
+            isBack={filter.isBack}
+            specialCheck={filter.specialCheck}
             departure={this.props.departure}
             destination={this.props.destination}
             initialState={filter.initialState}

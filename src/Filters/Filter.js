@@ -80,6 +80,9 @@ const Ways = styled.h1`
   & img {
     margin: 0 5px 0 5px;
   }
+  &:not(:first-of-type) {
+    margin: 20px 0 0 0;
+  }
 `;
 
 const SliderWrapper = styled.div`
@@ -117,115 +120,102 @@ const GroupTitle = styled.h1`
   color: #323333;
 `;
 
-function FilterType(props) {
-  let filter;
-
-  switch (props.filterType) {
-    case "Пересадки":
-      filter = (
-        <Content>
-          <Item>
-            <Checkbox label="Всё" />
-          </Item>
-          {props.content.map((con, index) => (
-            <Item key={index}>
-              <Checkbox label={con.name} />
-              <MinPrice>{con.minPrice} ₽</MinPrice>
-            </Item>
-          ))}
-        </Content>
-      );
-      break;
-
-    case "Время вылета и прибытия":
-      filter = (
-        <Content>
-          <Ways>
-            {props.departure}
-            <img src={flight} alt="to" />
-            {props.destination}
-          </Ways>
-          <SliderWrapper>
-            <SliderTitle>Вылет из {props.departure}:</SliderTitle>
-            <FakeSliderValues>
-              <span>с 00:00</span>
-              <span>до 23:59</span>
-            </FakeSliderValues>
-            <Slider />
-          </SliderWrapper>
-          <SliderWrapper>
-            <SliderTitle>Прибытие в {props.destination}:</SliderTitle>
-            <FakeSliderValues>
-              <span>с 00:00</span>
-              <span>до 23:59</span>
-            </FakeSliderValues>
-            <Slider />
-          </SliderWrapper>
-        </Content>
-      );
-      break;
-    case "Багаж":
-      filter = <Content>content</Content>;
-      break;
-    case "Длительность пересадки":
-      filter = <Content>content</Content>;
-      break;
-    case "Время в пути":
-      filter = (
-        <Content>
-          <Ways>
-            {props.departure}
-            <img src={flight} alt="to" />
-            {props.destination}
-          </Ways>
-          <SliderWrapper>
-            <FakeSliderValues>
-              <span>от 3ч 05м</span>
-              <span>до 18ч 30м</span>
-            </FakeSliderValues>
-            <Slider />
-          </SliderWrapper>
-        </Content>
-      );
-      break;
-    case "Авиакомпании":
-      filter = (
-        <Content>
-          <Checkbox label="Несколько авиакомпаний" />
-          <p>
-            Показывать билеты с перелетами, выполняемыми несколькими
-            авиакомпаниями, включая выбранную
-          </p>
-          {props.content.map((con, index) => (
+function FilterContent(props) {
+  if (props.filterType === "checkboxes") {
+    return (
+      <Content>
+        {props.specialCheck &&
+          props.specialCheck.map((item, index) => (
             <div>
-              <GroupTitle>{con.groupTitle}</GroupTitle>
+              <Checkbox label={item.title} />
+              <p>{item.description}</p>
+            </div>
+          ))}
+        {props.content.map((con, index) => (
+          <div>
+            {con.groupTitle && <GroupTitle>{con.groupTitle}</GroupTitle>}
+            {con.group.length && (
               <Item>
                 <Checkbox label="Всё" />
               </Item>
-              {con.group.map((item, index) => (
-                <Item>
-                  <Checkbox label={item.name} />
-                  <MinPrice>{item.minPrice} ₽</MinPrice>
-                </Item>
-              ))}
-            </div>
-          ))}
-        </Content>
-      );
-      break;
-    case "Аэропорты":
-      filter = <Content>content</Content>;
-      break;
-    case "Аэропорт пересадки":
-      filter = <Content>content</Content>;
-      break;
-    case "Агенства":
-      filter = <Checkbox>content</Checkbox>;
-      break;
-    default:
-      filter = true;
+            )}
+            {con.group.map((item, index) => (
+              <Item>
+                <Checkbox label={item.name} />
+                <MinPrice>{item.minPrice} ₽</MinPrice>
+              </Item>
+            ))}
+          </div>
+        ))}
+      </Content>
+    );
   }
-  return <div>{filter}</div>;
+  if (props.filterType === "sliders") {
+    return (
+      <Content>
+        <Ways>
+          {props.departure}
+          <img src={flight} alt="to" />
+          {props.destination}
+        </Ways>
+        {props.content.map((con, index) => (
+          <SliderWrapper key={index}>
+            <SliderTitle>
+              {con.name}{" "}
+              {con.name &&
+                (con.usedForDeparture ? props.departure : props.destination)}
+              {con.name && ":"}
+            </SliderTitle>
+            {con.handles === "daytime" && (
+              <FakeSliderValues>
+                <span>с 00:00</span>
+                <span>до 23:59</span>
+              </FakeSliderValues>
+            )}
+            {con.handles === "time" && (
+              <FakeSliderValues>
+                <span>от 4ч 20м</span>
+                <span>до 48ч 00м</span>
+              </FakeSliderValues>
+            )}
+            <Slider />
+          </SliderWrapper>
+        ))}
+        {props.isBack && (
+          <Ways>
+            {props.destination}
+            <img src={flight} alt="to" />
+            {props.departure}
+          </Ways>
+        )}
+        {props.isBack &&
+          props.content.map((con, index) => (
+            <SliderWrapper key={index}>
+              <SliderTitle>
+                {con.name}{" "}
+                {con.name &&
+                  (con.usedForDeparture ? props.destination : props.departure)}
+                {con.name && ":"}
+              </SliderTitle>
+              {con.handles === "daytime" && (
+                <FakeSliderValues>
+                  <span>с 00:00</span>
+                  <span>до 23:59</span>
+                </FakeSliderValues>
+              )}
+              {con.handles === "time" && (
+                <FakeSliderValues>
+                  <span>от 4ч 20м</span>
+                  <span>до 48ч 00м</span>
+                </FakeSliderValues>
+              )}
+              <Slider />
+            </SliderWrapper>
+          ))}
+      </Content>
+    );
+  }
+  return <div>no content</div>;
 }
 
 class Filter extends Component {
@@ -249,9 +239,11 @@ class Filter extends Component {
           {this.props.title} <Count>{this.props.count}</Count>
         </ShowContent>
         {this.state.isOpen && (
-          <FilterType
-            filterType={this.props.title}
+          <FilterContent
+            filterType={this.props.type}
             content={this.props.content}
+            isBack={this.props.isBack}
+            specialCheck={this.props.specialCheck}
             departure={this.props.departure}
             destination={this.props.destination}
           />
