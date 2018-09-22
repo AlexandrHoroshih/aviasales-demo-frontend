@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import "./checkbox.css";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,6 +14,36 @@ const Wrapper = styled.div`
     line-height: 36px;
     font-size: 12px;
     color: #4a4a4a;
+  }
+`;
+
+const StyledCheckbox = styled.input`
+  display: none;
+  & + label {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #00ace2;
+    border-radius: 4px;
+    background: #ffffff;
+    margin-right: 6px;
+    display: inline-block;
+    position: relative;
+  }
+  & + label:active {
+    background: #e1f8ff;
+  }
+  &:checked + label {
+    background: #e1f8ff;
+    border: 1px solid #00ace2;
+    color: #00ace2;
+  }
+  &:checked + label:after {
+    content: "✔";
+    font-size: 14px;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    color: #00ace2;
   }
 `;
 
@@ -34,10 +63,9 @@ class Checkbox extends Component {
   render() {
     return (
       <Wrapper>
-        <input
+        <StyledCheckbox
           type="checkbox"
           id={this.props.label}
-          className="checkbox"
           onClick={this.toggleChecked}
           checked={this.state.isChecked}
         />
