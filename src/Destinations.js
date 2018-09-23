@@ -91,7 +91,7 @@ export default function() {
                 <Card
                   key={card.index}
                   country={card.country}
-                  img={card.img}
+                  iata={card.iata}
                   city={card.city}
                   price={card.price}
                   date={card.date}

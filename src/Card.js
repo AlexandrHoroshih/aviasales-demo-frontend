@@ -95,7 +95,9 @@ class Card extends Component {
   render() {
     return (
       <Base>
-        <CityImg src={this.props.img} />
+        <CityImg
+          src={process.env.PUBLIC_URL + "/media/" + this.props.iata + ".png"}
+        />
         <Info>
           <Destination>
             <FlagWrapper>
