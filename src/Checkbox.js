@@ -7,14 +7,15 @@ const Wrapper = styled.div`
   & label {
     display: inline;
   }
-  & span {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 36px;
-    font-size: 12px;
-    color: #4a4a4a;
-  }
+`;
+
+const Label = styled.span`
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 36px;
+  font-size: 12px;
+  color: #4a4a4a;
 `;
 
 const StyledCheckbox = styled.input`
@@ -70,7 +71,7 @@ class Checkbox extends Component {
           checked={this.state.isChecked}
         />
         <label htmlFor={this.props.label} />
-        <span>{this.props.label}</span>
+        <Label>{this.props.label}</Label>
       </Wrapper>
     );
   }
