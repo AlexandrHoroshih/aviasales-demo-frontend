@@ -6,6 +6,7 @@ import Flag from "./Flag";
 const prices = [
   {
     country: "Россия",
+    countryCode: "ru",
     city: "Симферополь(Крым)",
     depart: [
       { from: "Москвы", price: 4813 },
@@ -17,6 +18,7 @@ const prices = [
   },
   {
     country: "Армения",
+    countryCode: "es",
     city: "Ереван",
     depart: [
       { from: "Москвы", price: 4813 },
@@ -28,6 +30,7 @@ const prices = [
   },
   {
     country: "Молдавия",
+    countryCode: "md",
     city: "Кишинёв",
     depart: [
       { from: "Москвы", price: 4813 },
@@ -201,7 +204,7 @@ export default function() {
             {prices.map((price, index) => (
               <Prices>
                 <Destination>
-                  <Flag country={price.country} />
+                  <Flag countryCode={price.countryCode} />
                   <div>
                     <City>{price.city}</City>
                     <Country>{price.country}</Country>

@@ -103,7 +103,7 @@ class Card extends Component {
         <Info>
           <Destination>
             <FlagWrapper>
-              <Flag country={this.props.country} />
+              <Flag countryCode={this.props.countryCode} />
             </FlagWrapper>
             <div>
               <City>{this.props.city}</City>

@@ -91,6 +91,7 @@ export default function() {
                 <Card
                   key={card.index}
                   country={card.country}
+                  countryCode={card.countryCode}
                   iata={card.iata}
                   city={card.city}
                   price={card.price}

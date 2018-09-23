@@ -4,6 +4,7 @@ const barsaImg = "/media/barsa.png";
 const cards = [
   {
     country: "Россия",
+    countryCode: "ru",
     city: "Сочи (Адлер)",
     iata: "aer",
     price: 2400,
@@ -11,6 +12,7 @@ const cards = [
   },
   {
     country: "Россия",
+    countryCode: "ru",
     city: "Красноярск",
     iata: "kja",
     img: sochiImg,
@@ -19,6 +21,7 @@ const cards = [
   },
   {
     country: "Молдавия",
+    countryCode: "md",
     city: "Кишинёв",
     iata: "kiv",
     price: 1400,
@@ -26,6 +29,7 @@ const cards = [
   },
   {
     country: "Испания",
+    countryCode: "es",
     city: "Барселона",
     iata: "bcn",
     price: 5400,
@@ -33,6 +37,7 @@ const cards = [
   },
   {
     country: "Армения",
+    countryCode: "am",
     city: "Ереван",
     iata: "evn",
     price: 2400,
@@ -40,6 +45,7 @@ const cards = [
   },
   {
     country: "Россия",
+    countryCode: "ru",
     city: "Сочи (Адлер)",
     iata: "aer",
     price: 2400,
