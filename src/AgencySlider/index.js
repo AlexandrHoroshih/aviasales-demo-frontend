@@ -39,7 +39,6 @@ const Title = styled.h1`
 
 const SliderWrapper = styled.div`
   position: relative;
-  height: 150px;
 `;
 
 const SlideContent = styled.div`
