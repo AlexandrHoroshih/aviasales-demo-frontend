@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Flag from "./Flag";
+import format from "date-fns/format";
+import { ru } from "date-fns/esm/locale";
 
 const Base = styled.div`
   border-radius: 8px;
@@ -90,7 +92,7 @@ const FlagWrapper = styled.span`
     display: none;
   }
 `;
-
+window.__localeId__ = "ru";
 class Card extends Component {
   render() {
     return (
@@ -112,12 +114,11 @@ class Card extends Component {
           </Destination>
           <div>
             <Price>Найти от {this.props.price}</Price>
-            <Date>{this.props.date}</Date>
+            <Date>{format(this.props.date, "d MMMM", { locale: ru })}</Date>
           </div>
         </Info>
       </Base>
     );
   }
 }
-
 export default Card;

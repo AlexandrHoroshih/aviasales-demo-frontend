@@ -5,7 +5,7 @@ const cards = [
     city: "Сочи (Адлер)",
     iata: "aer",
     price: 2400,
-    date: "13 апреля"
+    date: "2018-09-13"
   },
   {
     country: "Россия",
@@ -13,7 +13,7 @@ const cards = [
     city: "Красноярск",
     iata: "kja",
     price: 1800,
-    date: "5 мая"
+    date: "2019-04-13"
   },
   {
     country: "Молдавия",
@@ -21,7 +21,7 @@ const cards = [
     city: "Кишинёв",
     iata: "kiv",
     price: 1400,
-    date: "28 апреля"
+    date: "2019-04-13"
   },
   {
     country: "Испания",
@@ -29,7 +29,7 @@ const cards = [
     city: "Барселона",
     iata: "bcn",
     price: 5400,
-    date: "15 апреля"
+    date: "2019-04-13"
   },
   {
     country: "Армения",
@@ -37,7 +37,7 @@ const cards = [
     city: "Ереван",
     iata: "evn",
     price: 2400,
-    date: "13 апреля"
+    date: "2019-04-13"
   },
   {
     country: "Россия",
@@ -45,7 +45,7 @@ const cards = [
     city: "Сочи (Адлер)",
     iata: "aer",
     price: 2400,
-    date: "13 апреля"
+    date: "2019-04-13"
   }
 ];
 
