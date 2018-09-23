@@ -8,8 +8,6 @@ import plane from "./media/plane-taking-off.svg";
 import share from "./media/share.svg";
 import arrow from "./media/darrow.svg";
 
-import rossiya from "./media/rossiya.png";
-
 const Wrapper = styled.div`
   position: relative;
   font-family: Roboto;
@@ -312,7 +310,14 @@ class ResultCard extends Component {
         </BuyWrapper>
         <TicketWrapper>
           <CompanyWrapper>
-            <img src={rossiya} alt="rossiya" />
+            <img
+              src={
+                process.env.PUBLIC_URL +
+                "/media/companies/" +
+                this.props.companyFirst +
+                ".png"
+              }
+            />
             {this.props.isCharter && <Charter>Чартер</Charter>}
             <Share>
               <img src={share} alt="share" />

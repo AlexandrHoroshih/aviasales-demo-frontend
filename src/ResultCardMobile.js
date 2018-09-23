@@ -139,7 +139,14 @@ class ResultCardMobile extends Component {
         <Status status={this.props.status} />
         <Head>
           <Price>{this.props.price} ₽</Price>
-          <img src={rossiya} alt="" />
+          <img
+            src={
+              process.env.PUBLIC_URL +
+              "/media/companies/" +
+              this.props.companyFirst +
+              ".png"
+            }
+          />
         </Head>
         <FlightInfo>
           <FlightTime>

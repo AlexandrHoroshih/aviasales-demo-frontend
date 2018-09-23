@@ -200,6 +200,7 @@ class Results extends Component {
                   baggage={res.baggage}
                   price={res.price}
                   source={res.source}
+                  companyFirst={res.companyFirst}
                   isCharter={res.isCharter}
                   departure={this.state.departure}
                   time={res.time}
@@ -219,6 +220,7 @@ class Results extends Component {
                   baggage={res.baggage}
                   price={res.price}
                   source={res.source}
+                  companyFirst={res.companyFirst}
                   isCharter={res.isCharter}
                   time={res.time}
                   departure={this.state.departure}
