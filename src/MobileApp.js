@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import iphone from "./media/iphone.png";
 import rating from "./media/raiting.png";
 import apple from "./media/apple.svg";

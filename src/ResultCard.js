@@ -306,7 +306,7 @@ class ResultCard extends Component {
           <BuyButton>
             Купить
             <br />
-            <span>за {this.props.price} Р</span>
+            <span>за {this.props.price} ₽</span>
           </BuyButton>
           <Source>на {this.props.source}</Source>
         </BuyWrapper>
