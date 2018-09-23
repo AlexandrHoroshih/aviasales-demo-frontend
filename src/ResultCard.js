@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import format from "date-fns/format";
+import { ru } from "date-fns/esm/locale";
 import lug from "./media/luggage.svg";
 import bag from "./media/baggage.svg";
 import nobag from "./media/nobag.svg";
@@ -329,11 +331,15 @@ class ResultCard extends Component {
               <Departure>
                 <Time>
                   <img src={pin} alt="pin" />
-                  {this.props.depTime}
+                  {format(this.props.depTime, "hh:mm", {
+                    locale: ru
+                  })}
                 </Time>
                 <Date>
                   <h1>{this.props.departure}</h1>
-                  24 фев 2018, сб
+                  {format(this.props.depTime, "d MMM yyyy, 	EEEEEE", {
+                    locale: ru
+                  })}
                 </Date>
               </Departure>
               <FlightTimeWrapper>
@@ -353,10 +359,16 @@ class ResultCard extends Component {
                 </IataWrapper>
               </FlightTimeWrapper>
               <Destination>
-                <Time>{this.props.desTime}</Time>
+                <Time>
+                  {format(this.props.desTime, "hh:mm", {
+                    locale: ru
+                  })}
+                </Time>
                 <Date>
                   <h1>{this.props.destination}</h1>
-                  24 фев 2018, сб
+                  {format(this.props.desTime, "d MMM yyyy, 	EEEEEE", {
+                    locale: ru
+                  })}
                 </Date>
               </Destination>
             </FlightWrapper>
@@ -365,11 +377,15 @@ class ResultCard extends Component {
                 <Departure>
                   <Time>
                     <img src={pin} alt="pin" />
-                    {this.props.backDepTime}
+                    {format(this.props.backDepTime, "hh:mm", {
+                      locale: ru
+                    })}
                   </Time>
                   <Date>
                     <h1>{this.props.destination}</h1>
-                    24 фев 2018, сб
+                    {format(this.props.backDepTime, "d MMM yyyy, 	EEEEEE", {
+                      locale: ru
+                    })}
                   </Date>
                 </Departure>
                 <FlightTimeWrapper>
@@ -389,10 +405,16 @@ class ResultCard extends Component {
                   </IataWrapper>
                 </FlightTimeWrapper>
                 <Destination>
-                  <Time>{this.props.backDesTime}</Time>
+                  <Time>
+                    {format(this.props.backDepTime, "hh:mm", {
+                      locale: ru
+                    })}
+                  </Time>
                   <Date>
                     <h1>{this.props.departure}</h1>
-                    24 фев 2018, сб
+                    {format(this.props.backDesTime, "d MMM yyyy, 	EEEEEE", {
+                      locale: ru
+                    })}
                   </Date>
                 </Destination>
               </FlightWrapper>
