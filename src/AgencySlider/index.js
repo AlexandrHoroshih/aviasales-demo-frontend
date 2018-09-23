@@ -12,10 +12,23 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import "./agency-slider.css";
 import arrow from "./sliderbtn.svg";
 
-import aeroflot from "./aeroflot.png";
-import s7 from "./s7.png";
-import onetwo from "./12trip.png";
-import ka from "./ka.png";
+const promoAgencies = [
+  {
+    company: "aeroflot"
+  },
+  {
+    company: "koreanair"
+  },
+  {
+    company: "onetwotrip"
+  },
+  {
+    company: "s7"
+  },
+  {
+    company: "someagency"
+  }
+];
 
 const Background = styled.div`
   background: #f8fcff;
@@ -71,23 +84,23 @@ function AgencySlider() {
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={7}
-            totalSlides={2}
+            totalSlides={1}
           >
             <SliderWrapper>
               <Slider classNameTray="slider-md">
                 <Slide index={0}>
                   <SlideContent>
-                    <img src={aeroflot} alt="aeroflot" />
-                    <img src={s7} alt="s7" />
-                    <img src={onetwo} alt="trip" />
-                    <img src={ka} alt="korea" />
-                    <img src={s7} alt="s7" />
+                    {promoAgencies.map((promo, index) => (
+                      <img
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/media/companies/" +
+                          promo.company +
+                          ".png"
+                        }
+                      />
+                    ))}
                   </SlideContent>
-                </Slide>
-                <Slide index={1}>
-                  <img src={s7} alt="s7" />
-                  <img src={onetwo} alt="trip" />
-                  <img src={ka} alt="korea" />
                 </Slide>
               </Slider>
               <ButtonBack className="slider-button back">
