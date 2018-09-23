@@ -24,7 +24,7 @@ const ShowContent = styled.div`
 
 const FilterArrow = styled.img`
   ${props =>
-    props.open === true &&
+    props.open &&
     css`
       transform: rotate(90deg);
     `};
