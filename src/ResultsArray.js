@@ -12,10 +12,14 @@ const results = [
     time: "5ч",
     departure: "Москва",
     destination: "Барселона",
+    depDate: "",
     depTime: "00:05",
+    desDate: "",
     desTime: "03:05",
     isBack: true,
+    backDepDate: "",
     backDepTime: "10:35",
+    backDesDate: "",
     backDesTime: "17:10"
   },
   {
@@ -31,11 +35,15 @@ const results = [
     time: "4ч30м",
     departure: "Москва",
     destination: "Барселона",
-    depTime: "10:05",
-    desTime: "13:05",
+    depDate: "",
+    depTime: "00:05",
+    desDate: "",
+    desTime: "03:05",
     isBack: true,
-    backDepTime: "00:35",
-    backDesTime: "18:10"
+    backDepDate: "",
+    backDepTime: "10:35",
+    backDesDate: "",
+    backDesTime: "17:10"
   },
   {
     status: "best",
@@ -50,7 +58,9 @@ const results = [
     time: "6ч",
     departure: "Москва",
     destination: "Барселона",
+    depDate: "",
     depTime: "00:05",
+    desDate: "",
     desTime: "03:05",
     isBack: false,
     backDepTime: null,
@@ -68,11 +78,15 @@ const results = [
     time: "6ч",
     departure: "Москва",
     destination: "Барселона",
+    depDate: "",
     depTime: "00:05",
+    desDate: "",
     desTime: "03:05",
     isBack: true,
-    backDepTime: "01:00",
-    backDesTime: "03:00"
+    backDepDate: "",
+    backDepTime: "10:35",
+    backDesDate: "",
+    backDesTime: "17:10"
   },
   {
     handLuggage: 2,
@@ -86,7 +100,9 @@ const results = [
     time: "6ч",
     departure: "Москва",
     destination: "Барселона",
+    depDate: "",
     depTime: "00:05",
+    desDate: "",
     desTime: "03:05",
     isBack: false,
     backDepTime: null,
@@ -104,7 +120,9 @@ const results = [
     time: "6ч",
     departure: "Москва",
     destination: "Барселона",
+    depDate: "",
     depTime: "00:05",
+    desDate: "",
     desTime: "03:05",
     isBack: false,
     backDepTime: null,
@@ -122,11 +140,15 @@ const results = [
     time: "6ч",
     departure: "Москва",
     destination: "Барселона",
+    depDate: "",
     depTime: "00:05",
+    desDate: "",
     desTime: "03:05",
     isBack: true,
-    backDepTime: "00:05",
-    backDesTime: "02:05"
+    backDepDate: "",
+    backDepTime: "10:35",
+    backDesDate: "",
+    backDesTime: "17:10"
   },
   {
     handLuggage: 2,
@@ -140,7 +162,9 @@ const results = [
     time: "6ч",
     departure: "Москва",
     destination: "Барселона",
+    depDate: "",
     depTime: "00:05",
+    desDate: "",
     desTime: "03:05",
     isBack: false,
     backDepTime: null,
@@ -148,4 +172,4 @@ const results = [
   }
 ];
 
-export { results };
+export default results;

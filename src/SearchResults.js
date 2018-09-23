@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import Card from "./ResultCard";
 import MobileCard from "./ResultCardMobile";
 import Filters from "./Filters";
-import { results } from "./ResultsArray";
+import results from "./ResultsArray";
 import filters from "./Filters/filters.svg";
 
 const Background = styled.section`

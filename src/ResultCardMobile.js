@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import clock from "./media/clock.svg";
 import flight from "./media/to.svg";
-import rossiya from "./media/rossiya.png";
 
 const Wrapper = styled.div`
   position: relative;
@@ -146,6 +145,7 @@ class ResultCardMobile extends Component {
               this.props.companyFirst +
               ".png"
             }
+            alt={this.props.companyFirst}
           />
         </Head>
         <FlightInfo>

@@ -98,6 +98,7 @@ function AgencySlider() {
                           promo.company +
                           ".png"
                         }
+                        alt={promo.company}
                       />
                     ))}
                   </SlideContent>

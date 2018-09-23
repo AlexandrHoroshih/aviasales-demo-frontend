@@ -1,6 +1,3 @@
-const sochiImg = "/media/sochi.png";
-const barsaImg = "/media/barsa.png";
-
 const cards = [
   {
     country: "Россия",
@@ -15,7 +12,6 @@ const cards = [
     countryCode: "ru",
     city: "Красноярск",
     iata: "kja",
-    img: sochiImg,
     price: 1800,
     date: "5 мая"
   },

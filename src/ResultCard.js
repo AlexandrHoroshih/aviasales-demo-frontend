@@ -317,6 +317,7 @@ class ResultCard extends Component {
                 this.props.companyFirst +
                 ".png"
               }
+              alt={this.props.companyFirst}
             />
             {this.props.isCharter && <Charter>Чартер</Charter>}
             <Share>
