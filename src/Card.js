@@ -96,7 +96,9 @@ class Card extends Component {
     return (
       <Base>
         <CityImg
-          src={process.env.PUBLIC_URL + "/media/" + this.props.iata + ".png"}
+          src={
+            process.env.PUBLIC_URL + "/media/cities/" + this.props.iata + ".png"
+          }
         />
         <Info>
           <Destination>
