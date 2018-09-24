@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import SpecialCard from "./SpecialCard";
-import alliance from "./alliance.png";
 
 const specials = [
   {
@@ -16,7 +15,7 @@ const specials = [
     destination: "Нью-Йорк",
     company: "Lufthansa",
     logo: "lufthansa",
-    alliance: alliance,
+    alliance: "alliance",
     price: 20460,
     daysleft: 19
   },
@@ -24,7 +23,7 @@ const specials = [
     destination: "Лос-Анджелес",
     company: "Lufthansa",
     logo: "lufthansa",
-    alliance: alliance,
+    alliance: "alliance",
     price: 22360,
     daysleft: 19
   }

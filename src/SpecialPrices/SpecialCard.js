@@ -120,7 +120,15 @@ class SpecialCard extends Component {
             <span>Билеты от {this.props.price} рублей</span>
           )}
           {this.props.alliance && (
-            <img src={this.props.alliance} alt="alliance" />
+            <img
+              src={
+                process.env.PUBLIC_URL +
+                "/media/companies/" +
+                this.props.alliance +
+                ".png"
+              }
+              alt="alliance"
+            />
           )}
         </Header>
         <Info>
