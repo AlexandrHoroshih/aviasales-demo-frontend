@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
+import format from "date-fns/format";
+import { ru } from "date-fns/esm/locale";
 import clock from "./media/clock.svg";
 import flight from "./media/to.svg";
 
@@ -152,7 +154,13 @@ class ResultCardMobile extends Component {
           <FlightTime>
             <Plane src={flight} alt="" />
             <span>
-              {this.props.depTime} - {this.props.desTime}
+              {format(this.props.depTime, "hh:mm", {
+                locale: ru
+              })}{" "}
+              -{" "}
+              {format(this.props.desTime, "hh:mm", {
+                locale: ru
+              })}
             </span>
             <img src={clock} alt="" />
             {this.props.time}
@@ -164,7 +172,13 @@ class ResultCardMobile extends Component {
             <FlightTime>
               <Plane isBack={this.props.isBack} src={flight} alt="" />
               <span>
-                {this.props.backDepTime} - {this.props.backDesTime}
+                {format(this.props.backDepTime, "hh:mm", {
+                  locale: ru
+                })}{" "}
+                -{" "}
+                {format(this.props.backDesTime, "hh:mm", {
+                  locale: ru
+                })}
               </span>
               <img src={clock} alt="" />
               {this.props.time}
