@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import SpecialCard from "./SpecialCard";
-import lufthansa from "./lufthansa.png";
-import pobeda from "./pobeda.png";
 import alliance from "./alliance.png";
 
 const specials = [
   {
     destination: null,
     company: "Победа",
-    logo: pobeda,
+    logo: "pobeda",
     alliance: null,
     price: 499,
     daysleft: 45
@@ -17,7 +15,7 @@ const specials = [
   {
     destination: "Нью-Йорк",
     company: "Lufthansa",
-    logo: lufthansa,
+    logo: "lufthansa",
     alliance: alliance,
     price: 20460,
     daysleft: 19
@@ -25,7 +23,7 @@ const specials = [
   {
     destination: "Лос-Анджелес",
     company: "Lufthansa",
-    logo: lufthansa,
+    logo: "lufthansa",
     alliance: alliance,
     price: 22360,
     daysleft: 19

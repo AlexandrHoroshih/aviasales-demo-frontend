@@ -124,11 +124,18 @@ class SpecialCard extends Component {
           )}
         </Header>
         <Info>
-          <Logo src={this.props.logo} alt={this.props.company} />
+          <Logo
+            src={
+              process.env.PUBLIC_URL +
+              "/media/companies/" +
+              this.props.logo +
+              ".png"
+            }
+            alt={this.props.company}
+          />
           <Price>
             <small>от </small>
-            {this.props.price} Р
-            <Days>Осталось {this.props.daysleft} дней</Days>
+            {this.props.price} ₽<Days>Осталось {this.props.daysleft} дней</Days>
           </Price>
           {this.props.destination ? (
             <p>

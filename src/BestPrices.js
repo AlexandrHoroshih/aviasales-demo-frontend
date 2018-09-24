@@ -169,7 +169,7 @@ class Departures extends Component {
         {this.props.departure.map(item => (
           <DepartureItem>
             <a>Из {item.from}</a>{" "}
-            <DeparturePrice>от {item.price}</DeparturePrice>
+            <DeparturePrice>от {item.price} ₽</DeparturePrice>
           </DepartureItem>
         ))}
       </DepartureList>

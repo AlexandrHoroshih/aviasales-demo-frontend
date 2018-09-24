@@ -113,7 +113,7 @@ class Card extends Component {
             </div>
           </Destination>
           <div>
-            <Price>Найти от {this.props.price}</Price>
+            <Price>Найти от {this.props.price} ₽</Price>
             <Date>{format(this.props.date, "d MMMM", { locale: ru })}</Date>
           </div>
         </Info>
