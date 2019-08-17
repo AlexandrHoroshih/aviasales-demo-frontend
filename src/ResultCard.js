@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import format from "date-fns/format";
-import { ru } from "date-fns/esm/locale";
 import lug from "./media/luggage.svg";
 import bag from "./media/baggage.svg";
 import nobag from "./media/nobag.svg";
@@ -9,6 +7,9 @@ import pin from "./media/pin.svg";
 import plane from "./media/plane-taking-off.svg";
 import share from "./media/share.svg";
 import arrow from "./media/darrow.svg";
+
+var format = require("./format")
+window.__localeId__ = 'ru'
 
 const Wrapper = styled.div`
   position: relative;
@@ -331,15 +332,11 @@ class ResultCard extends Component {
               <Departure>
                 <Time>
                   <img src={pin} alt="pin" />
-                  {format(this.props.depTime, "hh:mm", {
-                    locale: ru
-                  })}
+                  {format(this.props.depTime, "hh:mm")}
                 </Time>
                 <Date>
                   <h1>{this.props.departure}</h1>
-                  {format(this.props.depTime, "d MMM yyyy, 	EEEEEE", {
-                    locale: ru
-                  })}
+                  {format(this.props.depTime, "d MMM  YYYY, 	dddd")}
                 </Date>
               </Departure>
               <FlightTimeWrapper>
@@ -360,15 +357,11 @@ class ResultCard extends Component {
               </FlightTimeWrapper>
               <Destination>
                 <Time>
-                  {format(this.props.desTime, "hh:mm", {
-                    locale: ru
-                  })}
+                  {format(this.props.desTime, "hh:mm")}
                 </Time>
                 <Date>
                   <h1>{this.props.destination}</h1>
-                  {format(this.props.desTime, "d MMM yyyy, 	EEEEEE", {
-                    locale: ru
-                  })}
+                  {format(this.props.desTime, "d MMM  YYYY, 	 dddd")}
                 </Date>
               </Destination>
             </FlightWrapper>
@@ -377,15 +370,11 @@ class ResultCard extends Component {
                 <Departure>
                   <Time>
                     <img src={pin} alt="pin" />
-                    {format(this.props.backDepTime, "hh:mm", {
-                      locale: ru
-                    })}
+                    {format(this.props.backDepTime, "hh:mm")}
                   </Time>
                   <Date>
                     <h1>{this.props.destination}</h1>
-                    {format(this.props.backDepTime, "d MMM yyyy, 	EEEEEE", {
-                      locale: ru
-                    })}
+                    {format(this.props.backDepTime, "d MMM  YYYY, 	 dddd")}
                   </Date>
                 </Departure>
                 <FlightTimeWrapper>
@@ -406,15 +395,11 @@ class ResultCard extends Component {
                 </FlightTimeWrapper>
                 <Destination>
                   <Time>
-                    {format(this.props.backDepTime, "hh:mm", {
-                      locale: ru
-                    })}
+                    {format(this.props.backDepTime, "hh:mm")}
                   </Time>
                   <Date>
                     <h1>{this.props.departure}</h1>
-                    {format(this.props.backDesTime, "d MMM yyyy, 	EEEEEE", {
-                      locale: ru
-                    })}
+                    {format(this.props.backDesTime, "d MMM  YYYY, 	 dddd")}
                   </Date>
                 </Destination>
               </FlightWrapper>

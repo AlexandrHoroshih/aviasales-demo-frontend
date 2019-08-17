@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Flag from "./Flag";
-import format from "date-fns/format";
-import { ru } from "date-fns/esm/locale";
+var format = require("./format")
+
+window.__localeId__ = 'ru'
 
 const NON_BREAK_SPACE = '\u00A0';
 
@@ -116,7 +117,7 @@ class Card extends Component {
           </Destination>
           <div>
             <Price>Найти от {this.props.price}{NON_BREAK_SPACE}₽</Price>
-            <Date>{format(this.props.date, "d MMMM", { locale: ru })}</Date>
+            <Date>{format(this.props.date, "d MMM  YYYY")}</Date>
           </div>
         </Info>
       </Base>

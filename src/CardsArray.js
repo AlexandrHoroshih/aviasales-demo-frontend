@@ -34,7 +34,7 @@ const cards = [
   {
     country: "Россия",
     countryCode: "ru",
-    city: "Минеральные воды",
+    city: "Владикавказ",
     iata: "mrv",
     price: 2400,
     date: "2019-04-13"
@@ -42,7 +42,7 @@ const cards = [
   {
     country: "Россия",
     countryCode: "ru",
-    city: "Симферополь (Крым)",
+    city: "Симферополь",
     iata: "sip",
     price: 2400,
     date: "2019-04-13"

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import format from "date-fns/format";
-import { ru } from "date-fns/esm/locale";
+import { ru } from "date-fns/locale/ru";
 import clock from "./media/clock.svg";
 import flight from "./media/to.svg";
 
