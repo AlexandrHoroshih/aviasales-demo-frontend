@@ -10,16 +10,16 @@ const cards = [
   {
     country: "Россия",
     countryCode: "ru",
-    city: "Красноярск",
-    iata: "kja",
+    city: "Краснодар",
+    iata: "krr",
     price: 1800,
     date: "2019-04-13"
   },
   {
-    country: "Молдавия",
-    countryCode: "md",
-    city: "Кишинёв",
-    iata: "kiv",
+    country: "Россия",
+    countryCode: "ru",
+    city: "Санкт-Петербург",
+    iata: "led",
     price: 1400,
     date: "2019-04-13"
   },
@@ -32,18 +32,18 @@ const cards = [
     date: "2019-04-13"
   },
   {
-    country: "Армения",
-    countryCode: "am",
-    city: "Ереван",
-    iata: "evn",
+    country: "Россия",
+    countryCode: "ru",
+    city: "Минеральные воды",
+    iata: "mrv",
     price: 2400,
     date: "2019-04-13"
   },
   {
     country: "Россия",
     countryCode: "ru",
-    city: "Сочи (Адлер)",
-    iata: "aer",
+    city: "Симферополь (Крым)",
+    iata: "sip",
     price: 2400,
     date: "2019-04-13"
   }

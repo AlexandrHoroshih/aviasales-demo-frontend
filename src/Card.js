@@ -4,6 +4,8 @@ import Flag from "./Flag";
 import format from "date-fns/format";
 import { ru } from "date-fns/esm/locale";
 
+const NON_BREAK_SPACE = '\u00A0';
+
 const Base = styled.div`
   border-radius: 8px;
   box-shadow: 0px 2px 12px rgba(0, 75, 93, 0.12);
@@ -113,7 +115,7 @@ class Card extends Component {
             </div>
           </Destination>
           <div>
-            <Price>Найти от {this.props.price} ₽</Price>
+            <Price>Найти от {this.props.price}{NON_BREAK_SPACE}₽</Price>
             <Date>{format(this.props.date, "d MMMM", { locale: ru })}</Date>
           </div>
         </Info>

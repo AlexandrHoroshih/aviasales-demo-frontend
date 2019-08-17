@@ -23,7 +23,7 @@ const results = [
     handLuggage: 10,
     baggage: 20,
     optionalBaggage: null,
-    price: 25712,
+    price: 2712,
     source: "Купибилет",
     companyFirst: "rossiya",
     companySecond: null,
